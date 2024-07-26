@@ -29,38 +29,32 @@ Penetration testing typically involves the following stages:
 
 1. Planning and Preparation
 Before diving into testing, it's essential to define the scope and objectives. This phase involves:
-
 Defining Goals: What systems or applications are to be tested?
 Obtaining Permissions: Ensure you have authorization to test the target.
 Gathering Information: Collect details about the target system.
 
 2. Reconnaissance
 Also known as information gathering, this stage involves:
-
 Passive Reconnaissance: Collecting information without directly interacting with the target (e.g., social media, domain records).
 Active Reconnaissance: Directly interacting with the target to gather information (e.g., port scanning).
 
 3. Scanning
 In this phase, tools are used to identify open ports, services, and vulnerabilities. Common techniques include:
-
 Network Scanning: Identify live hosts and open ports.
 Vulnerability Scanning: Detect known vulnerabilities in software.
 
 4. Gaining Access
 This is where exploitation occurs. Testers use various methods to gain unauthorized access, such as:
-
 Exploiting Vulnerabilities: Using known exploits to breach systems.
 Social Engineering: Manipulating individuals into divulging information.
 
 5. Maintaining Access
 Once access is gained, it’s crucial to understand how to maintain it. This phase involves:
-
 Privilege Escalation: Gaining higher levels of access.
 Persistence: Ensuring continued access through backdoors or other methods.
 
 6. Analysis and Reporting
 After testing, detailed analysis and reporting are essential. This includes:
-
 Documenting Findings: Provide a comprehensive report on vulnerabilities discovered.
 Recommendations: Suggest remedial actions to fix identified issues.
 Remediation Testing: Verify that vulnerabilities have been addressed.
@@ -117,9 +111,9 @@ Penetration testing is a vital practice in cybersecurity that helps organization
 Further Reading
 For those looking to delve deeper into penetration testing, consider these resources:
 
-OWASP: Penetration Testing
-NIST: Technical Guide to Information Security Testing and Assessment
-SANS Penetration Testing
+- OWASP: Penetration Testing
+- NIST: Technical Guide to Information Security Testing and Assessment
+- SANS Penetration Testing
 
 Happy ethical hacking!
 
