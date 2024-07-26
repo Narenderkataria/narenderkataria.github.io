@@ -1,19 +1,8 @@
 ---
 layout: page
 title: About me
-subtitle: Security Professional
+subtitle: Information Security Professional
 ---
-
-My name is Narender Kataria. I have the following qualities:
-
-- I am working as Infrastructure and Security Manager
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
-
 
 # Narender Kataria
 +353-899777765 | narenderkataria@outlook.com | Stamp-4 (Two Month Notice)
