@@ -4,9 +4,6 @@ title: About me
 subtitle: Information Security Professional
 ---
 
-# Narender Kataria
-+353-899777765 | narenderkataria@outlook.com | Stamp-4 (Two Month Notice)
-
 ## Profile
 - With over 14 years of experience, I have consistently demonstrated strong problem-solving and critical thinking skills, with a dedicated focus on information security. Throughout my career, I have been committed to identifying and mitigating security risks, ensuring the confidentiality, integrity, and availability of critical information assets.
 - As a seasoned manager, I excel in leading cross-functional teams and optimizing workflows to ensure seamless project delivery, all while maintaining a strong focus on security.
