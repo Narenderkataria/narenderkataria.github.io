@@ -2,9 +2,9 @@
 layout: post
 title: Penetration Testing
 subtitle: A Beginner’s Guide to Understanding the Essentials
-cover-img: /assets/img/pentest.jpeg
+cover-img: /assets/img/pentest.jpg
 thumbnail-img: /assets/img/pentest-thumb.jpg
-share-img: /assets/img/pentest.jpeg
+share-img: /assets/img/pentest.jpg
 tags: [books, test]
 comments: true
 mathjax: true
