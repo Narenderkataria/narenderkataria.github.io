@@ -116,6 +116,3 @@ For those looking to delve deeper into penetration testing, consider these resou
 - SANS Penetration Testing
 
 Happy ethical hacking!
-
-
-Feel free to adjust the links and images as necessary to fit your needs. This format aims to provide a clear and engaging introduction to penetration testing for readers of all levels.
