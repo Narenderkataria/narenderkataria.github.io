@@ -5,12 +5,3 @@ title: GRC Tips
 
 <h1>Narender Kataria's Blog</h1>
 
-<div class="post-list">
-  {% for post in site.posts %}
-    <article class="post">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt | markdownify }}</p>
-      <a href="{{ post.url }}">Read more...</a>
-    </article>
-  {% endfor %}
-</div>
