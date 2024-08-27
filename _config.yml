@@ -20,10 +20,11 @@ author: Narender Kataria
 ###############################################
 
 navbar-links:
-  Home: "/"
-  Blog: "/blog"
-  About: "/about"
-  Contact: "/contact"
+  Blog: "/"
+  Sponsor : "/sponsor by"
+  Projects : "projects"
+  About: "/about me / contact"
+
 
 ################
 # --- Logo --- #
