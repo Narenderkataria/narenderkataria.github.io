@@ -37,14 +37,6 @@ avatar: "/assets/img/profile.PNG"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
-page-col: "#FFFFFF"
-text-col: "#333333"
-link-col: "#1E90FF"
-hover-col: "#4682B4"
-navbar-col: "#F0F0F0"
-navbar-text-col: "#333333"
-footer-col: "#F0F0F0"
-footer-text-col: "#666666"
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
