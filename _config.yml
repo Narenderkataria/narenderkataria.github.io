@@ -22,8 +22,9 @@ author: Narender Kataria
 navbar-links:
   Blog: "/"
   Sponsor : "/sponsor"
-  Projects : "projects"
+  Projects : "/projects"
   About: "/about"
+  Contact: "/contact"
 
 
 ################
