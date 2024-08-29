@@ -19,7 +19,10 @@ author: Narender Kataria
 ###############################################
 
 navbar-links:
-  Blog: "/"
+  Home: "/"
+  Web Application testing: "/webapptesting"
+  Penetration testing: "/pentest"
+  Red Teaming: "/redteam"
   About: "/about"
   Contact: "/contact"
 
@@ -30,10 +33,10 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/profile.PNG"
+# avatar: "/assets/img/profile.PNG"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: true
+# round-avatar: true
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
