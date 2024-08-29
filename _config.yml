@@ -19,7 +19,6 @@ author: Narender Kataria
 ###############################################
 
 navbar-links:
-  Home: "/"
   Web Application testing: "/webapptesting"
   Penetration testing: "/pentest"
   Red Teaming: "/redteam"
