@@ -2,16 +2,19 @@
 layout: page
 ---
 
+<!-- Header content from index.html -->
 {{ content }}
 
+<!-- Include the navigation bar below the header content -->
+{% include nav.html %}
+
+<!-- Blog posts section -->
 {% assign posts = paginator.posts | default: site.posts %}
 
-<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
 <ul class="posts-list list-unstyled" role="list">
   {% for post in posts %}
   <li class="post-preview">
     <article>
-
       {%- capture thumbnail -%}
         {% if post.thumbnail-img %}
           {{ post.thumbnail-img }}
@@ -84,7 +87,6 @@ layout: page
       {% if site.feed_show_tags != false and post.tags.size > 0 %}
       <div class="blog-tags">
         <span>Tags:</span>
-        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
         <ul class="d-inline list-inline" role="list">
           {% for tag in post.tags %}
           <li class="list-inline-item">
