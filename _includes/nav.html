@@ -11,6 +11,23 @@
 {%- endif -%}
 -->
 
+<style>
+  .navbar-custom {
+    height: 50px; /* Adjust this value to set the new height */
+    line-height: 50px; /* Ensures vertical centering of text */
+  }
+
+  .navbar-custom .navbar-brand, .navbar-custom .navbar-nav .nav-link, .navbar-custom .avatar-container {
+    line-height: 50px; /* Aligns items vertically */
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+</style>
+
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
