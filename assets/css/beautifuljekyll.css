@@ -1123,3 +1123,12 @@ pre {
     display: inline-block;
   }
 }
+
+.home-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
