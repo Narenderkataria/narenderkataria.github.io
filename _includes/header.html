@@ -1,32 +1,44 @@
-<link rel="stylesheet" href="{{ '/assets/css/fixed-header.css' | relative_url }}">
-
-{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-
-{% if page.cover-img %}
-  <div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
-    {% for bigimg in page.cover-img %}
-    {% assign imgnum = forloop.index %}
-    {% for imginfo in bigimg %}
-    {% if imginfo[0] %}
-      data-img-src-{{ imgnum }}="{{ imginfo[0] | absolute_url }}"
-      data-img-desc-{{ imgnum }}="{{ imginfo[1] }}"
-    {% else %}
-      data-img-src-{{ imgnum }}="{{ imginfo | absolute_url }}"
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
-  ></div>
-{% endif %}
-
 <header class="header-section {% if page.cover-img %}has-img{% endif %}">
   <div class="fixed-header">
+    <!-- Title and Subtitle -->
     <h1>
       <a href="{{ site.url | default: '/' }}" class="home-link">{{ page.title | strip_html }}</a>
     </h1>
     {% if page.subtitle %}
       <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
     {% endif %}
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light navbar-custom">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="main-navbar">
+        <ul class="navbar-nav">
+          {%- for link in site.navbar-links -%}
+            {%- if link[1].first %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {%- for childlink in link[1] -%}
+                    {%- for linkparts in childlink %}
+                      <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                    {%- endfor -%}
+                  {%- endfor %}
+                </div>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </nav>
   </div>
+
   <!-- Content below the fixed header -->
   <div class="intro-header {% if page.cover-img %} big-img {% endif %} content">
     {% if page.cover-img or page.title %}
