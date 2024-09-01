@@ -3,64 +3,34 @@ layout: page
 title: 'Tag Index'
 ---
 
-<!-- Set the date format to use in the tag index page, defaulting to "%B %-d, %Y" if not specified in site configuration -->
 {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
 
 {%- capture site_tags -%}
-    <!-- Begin capturing all tags in a variable called site_tags -->
     {%- for tag in site.tags -%}
-        <!-- Loop through all tags in the site -->
         {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
-        <!-- Output each tag name, separating them with a comma except for the last tag -->
     {%- endfor -%}
 {%- endcapture -%}
-<!-- End capturing and assign the result to site_tags -->
-
 {%- assign tags_list = site_tags | split:',' | sort -%}
-<!-- Split the comma-separated tag list into an array, then sort it alphabetically, and assign it to tags_list -->
 
 {%- for tag in tags_list -%}
-    <!-- Loop through each tag in the sorted tags_list -->
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn">
-        <!-- Create a link to the section of the page with the tag ID, styled as a button -->
-        <i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
-        <!-- Display an icon, the tag name, and the number of posts with that tag -->
-    </a>
+    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
 {%- endfor -%}
-<!-- End the loop through tags_list -->
 
 <div id="full-tags-list">
-    <!-- Create a container for the full list of tags and their posts -->
-
-    {%- for tag in tags_list -%}
-        <!-- Loop through each tag in the sorted tags_list -->
-        <h2 id="{{- tag -}}" class="linked-section">
-            <!-- Create a heading for each tag, with an ID for linking -->
-            <i class="fas fa-tag" aria-hidden="true"></i>
-            &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
-            <!-- Display an icon, the tag name, and the number of posts with that tag -->
-        </h2>
-
-        <div class="post-list">
-            <!-- Create a container for the list of posts under this tag -->
-
-            {%- for post in site.tags[tag] -%}
-                <!-- Loop through each post associated with the current tag -->
-                <div class="tag-entry">
-                    <!-- Create a container for each post entry -->
-                    <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
-                    <!-- Create a link to the post, displaying the post title with HTML stripped -->
-                    <div class="entry-date">
-                        <!-- Create a container for the post date -->
-                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
-                        <!-- Display the post date in the specified format, using an XML schema date format for accessibility -->
-                    </div>
+{%- for tag in tags_list -%}
+    <h2 id="{{- tag -}}" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
+    </h2>
+    <div class="post-list">
+        {%- for post in site.tags[tag] -%}
+            <div class="tag-entry">
+                <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
+                <div class="entry-date">
+                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
                 </div>
-            {%- endfor -%}
-            <!-- End the loop through posts for this tag -->
-
-        </div>
-    {%- endfor -%}
-    <!-- End the loop through tags_list -->
-
+            </div>
+        {%- endfor -%}
+    </div>
+{%- endfor -%}
 </div>
