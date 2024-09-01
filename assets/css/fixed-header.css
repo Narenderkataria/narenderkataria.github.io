@@ -1,0 +1,28 @@
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; /* or your desired background color */
+    z-index: 1000; /* Ensures it stays on top */
+    padding: 10px 0; /* Add some padding */
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Optional: Adds a subtle border below the title */
+  }
+  
+  .fixed-header h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  .fixed-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  /* Adjust the margin-top of the content below the fixed header */
+  .content {
+    margin-top: 80px; /* Adjust according to the height of the fixed header */
+  }
