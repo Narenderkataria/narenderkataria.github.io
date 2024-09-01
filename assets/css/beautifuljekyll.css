@@ -1130,39 +1130,5 @@ pre {
 }
 
 .home-link:hover {
-  text-decoration: underline;
-}
-
-
-.header-section {
-  width: 100%;
-  /* Ensure any padding/margin is consistent with the intro-header */
-}
-
-.intro-header {
-  /* Adjust as needed */
-}
-
-.container-md {
-  max-width: 768px; /* Or the width you desire */
-  margin: 0 auto; /* Center the container */
-}
-
-.row {
-  margin-left: -15px; /* Ensure it matches with the grid system */
-  margin-right: -15px;
-}
-
-.col-xl-8, .col-lg-10 {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Ensure .intro-header and .header-section have similar padding/margin */
-.intro-header {
-  padding: 20px 0; /* Adjust as needed */
-}
-
-.header-section {
-  padding: 20px 0; /* Adjust as needed */
+  text-decoration: none;
 }
