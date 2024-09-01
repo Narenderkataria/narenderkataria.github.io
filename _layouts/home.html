@@ -5,90 +5,147 @@ layout: page
 {{ content }}
 
 {% assign posts = paginator.posts | default: site.posts %}
+<!-- Assigns the list of posts to the 'posts' variable. If pagination is used, it takes the current page's posts; otherwise, it defaults to all posts. -->
 
 <!-- role="list" needed so that list-style: none in Safari doesn't remove the list semantics -->
 <ul class="posts-list list-unstyled" role="list">
+  <!-- Start an unordered list with a class for styling and role attribute for accessibility. -->
+  
   {% for post in posts %}
+  <!-- Loop through each post in the 'posts' list. -->
+
   <li class="post-preview">
+    <!-- Start a list item for each post. -->
+
     <article>
+      <!-- Start an article tag for semantic HTML. -->
 
       {%- capture thumbnail -%}
+        <!-- Begin capturing thumbnail URL into a variable. -->
+        
         {% if post.thumbnail-img %}
+          <!-- Check if the post has a thumbnail image. -->
           {{ post.thumbnail-img }}
+          <!-- Output the thumbnail image URL if it exists. -->
         {% elsif post.cover-img %}
+          <!-- If no thumbnail, check for a cover image. -->
           {% if post.cover-img.first %}
+            <!-- Check if the cover image array has items. -->
             {{ post.cover-img[0].first.first }}
+            <!-- Output the first cover image URL if it exists. -->
           {% else %}
             {{ post.cover-img }}
+            <!-- Output the cover image URL if the array is empty. -->
           {% endif %}
         {% else %}
+        <!-- No thumbnail or cover image exists. -->
         {% endif %}
       {% endcapture %}
+      <!-- End capturing thumbnail URL into the variable. -->
       {% assign thumbnail=thumbnail | strip %}
+      <!-- Remove any whitespace from the captured thumbnail URL and assign it to the 'thumbnail' variable. -->
 
       {% if site.feed_show_excerpt == false %}
+      <!-- Check if excerpts are disabled in the site configuration. -->
+      
       {% if thumbnail != "" %}
-      <div class="post-image post-image-normal">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
-        </a>
-      </div>
+        <!-- Check if the thumbnail variable is not empty. -->
+        <div class="post-image post-image-normal">
+          <!-- Create a div for the post image with a class for styling. -->
+          <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+            <!-- Create a link to the post with the thumbnail as its content. -->
+            <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+            <!-- Display the thumbnail image with an alt attribute for accessibility. -->
+          </a>
+        </div>
       {% endif %}
       {% endif %}
 
       <a href="{{ post.url | absolute_url }}">
+        <!-- Create a link to the post. -->
         <h2 class="post-title">{{ post.title | strip_html }}</h2>
+        <!-- Display the post title with HTML stripped for safety. -->
 
         {% if post.subtitle %}
+          <!-- Check if the post has a subtitle. -->
           <h3 class="post-subtitle">
-          {{ post.subtitle | strip_html }}
+            {{ post.subtitle | strip_html }}
+            <!-- Display the subtitle with HTML stripped for safety. -->
           </h3>
         {% endif %}
       </a>
 
       {% if post.author %}
+        <!-- Check if the post has an author. -->
         <span>By <strong>{{ post.author | strip_html }}</strong></span>
+        <!-- Display the author's name with HTML stripped for safety. -->
       {% endif %}
+      
       <p class="post-meta">
+        <!-- Display the post meta information (date). -->
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+        <!-- Assign a date format to a variable, defaulting if not specified in site configuration. -->
         Posted on {{ post.date | date: date_format }}
+        <!-- Display the post date formatted according to the assigned date format. -->
       </p>
 
       {% if thumbnail != "" %}
+      <!-- Check if the thumbnail variable is not empty. -->
       <div class="post-image post-image-small">
+        <!-- Create a div for the post image with a different class for styling. -->
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <!-- Create a link to the post with the thumbnail as its content. -->
           <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          <!-- Display the thumbnail image with an alt attribute for accessibility. -->
         </a>
       </div>
       {% endif %}
 
       {% unless site.feed_show_excerpt == false %}
+      <!-- Check if excerpts are enabled in the site configuration. -->
       {% if thumbnail != "" %}
-      <div class="post-image post-image-short">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
-        </a>
-      </div>
+        <!-- Check if the thumbnail variable is not empty. -->
+        <div class="post-image post-image-short">
+          <!-- Create a div for the post image with a different class for styling. -->
+          <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+            <!-- Create a link to the post with the thumbnail as its content. -->
+            <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+            <!-- Display the thumbnail image with an alt attribute for accessibility. -->
+          </a>
+        </div>
       {% endif %}
 
       <div class="post-entry">
+        <!-- Create a div for the post entry content. -->
         {% assign excerpt_length = site.excerpt_length | default: 50 %}
+        <!-- Assign a default excerpt length if not specified in site configuration. -->
         {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+        <!-- Display the post excerpt, stripped of HTML and truncated to the assigned length. -->
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
+        <!-- Calculate the number of words in the excerpt. -->
         {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
+          <!-- Check if the post content is different from the excerpt or if the excerpt is longer than the assigned length. -->
           <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
+          <!-- Provide a link to read more of the post if the conditions are met. -->
         {% endif %}
       </div>
       {% endunless %}
 
       {% if site.feed_show_tags != false and post.tags.size > 0 %}
+      <!-- Check if tags should be shown and if the post has tags. -->
       <div class="blog-tags">
+        <!-- Create a div for the post tags. -->
         <span>Tags:</span>
+        <!-- Display the text "Tags:" -->
         <!-- role="list" needed so that list-style: none in Safari doesn't remove the list semantics -->
         <ul class="d-inline list-inline" role="list">
+          <!-- Start an unordered list for tags with inline styling. -->
           {% for tag in post.tags %}
+          <!-- Loop through each tag in the post's tags. -->
           <li class="list-inline-item">
+            <!-- Create a list item for each tag. -->
             <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a>
+            <!-- Create a link to the tag page with the tag name as its content. -->
           </li>
           {% endfor %}
         </ul>
@@ -96,27 +153,44 @@ layout: page
       {% endif %}
 
     </article>
+    <!-- End the article tag. -->
   </li>
+  <!-- End the list item for the post. -->
   {% endfor %}
+  <!-- End the loop through posts. -->
 </ul>
 
 {% if paginator.total_pages > 1 %}
+<!-- Check if there are multiple pages of posts. -->
 <ul class="pagination main-pager">
+  <!-- Create a list for pagination controls. -->
   {% if paginator.previous_page %}
+  <!-- Check if there is a previous page. -->
   <li class="page-item previous">
+    <!-- Create a list item for the previous page link. -->
     <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
+      <!-- Create a link to the previous page. -->
       <i class="fas fa-arrow-left" alt="Newer Posts"></i>
+      <!-- Display an icon for the previous page link. -->
       <span class="d-none d-sm-inline-block">Newer Posts</span>
+      <!-- Display text for the previous page link (hidden on small screens). -->
     </a>
   </li>
   {% endif %}
+  
   {% if paginator.next_page %}
+  <!-- Check if there is a next page. -->
   <li class="page-item next">
+    <!-- Create a list item for the next page link. -->
     <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
+      <!-- Create a link to the next page. -->
       <span class="d-none d-sm-inline-block">Older Posts</span>
+      <!-- Display text for the next page link (hidden on small screens). -->
       <i class="fas fa-arrow-right" alt="Older Posts"></i>
+      <!-- Display an icon for the next page link. -->
     </a>
   </li>
   {% endif %}
 </ul>
 {% endif %}
+<!-- End pagination controls if there are multiple pages. -->
