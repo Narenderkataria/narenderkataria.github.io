@@ -10,6 +10,21 @@
   <a class="navbar-brand mx-auto" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
 {%- endif -%}
 -->
+<style>
+  .navbar-custom {
+    height: 50px; /* Adjust this value to set the new height */
+    line-height: 50px; /* Ensures vertical centering of text */
+  }
+
+  .navbar-custom .navbar-brand, .navbar-custom .navbar-nav .nav-link, .navbar-custom .avatar-container {
+    line-height: 50px; /* Aligns items vertically */
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+</style>
 
   <!-- Keeping only the site title -->
   {%- if site.title -%}
