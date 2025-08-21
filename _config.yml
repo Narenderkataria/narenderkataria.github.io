@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Hacking Diary
+title: GRC Tips
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my blog where I write about GRC. 
 url: "https://blog.grctips.com" # Your site's base URL
